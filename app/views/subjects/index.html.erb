@@ -3,7 +3,9 @@
 <div class="subjects index">
   <h2>Subjects</h2>
 
-  <%= link_to "Add a new subject", { action: 'new' }, class: 'action new' %>
+  <%=  %>
+
+  <%= link_to(image_tag('plus_sign.png', size: '11x11', alt: 'plus sign') + " Add a new subject", { action: 'new' }, class: 'action new')%>
 
   <div> <%= pluralize(@subjects.size, 'subject') %> found </div> <br>
 

@@ -1,2 +1,8 @@
 <h1>Demo#index</h1>
 <p>Hello</p>
+
+<%= name = "Zaid" %>
+
+<%= link_to('Roar', '#', onclick: "jsRoar('#{name}'); return true;")%>
+
+<%= javascript_tag("jsRoar('#{name}');") %>
