@@ -1,9 +1,4 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
+<%= @page_title = "Pages" %>
 <div class="pages index">
   <h2>Pages</h2>
 
@@ -12,16 +7,21 @@
   <table class="listing" summary="Page list">
     <tr class="header">
       <th>&nbsp;</th>
+      <th>Subject ID</th>
       <th>Page</th>
+      <th>Permalink</th>
       <th>Visible</th>
-      <th>Pages</th>
+      <th>Sections</th>
       <th>Actions</th>
     </tr>
     <% @pages.each do |page| %>
       <tr>
         <td><%= page.position %></td>
+        <td><%= page.subject_id %></td>
         <td><%= page.name %></td>
-        <td class="center"><%= subject.pages.size %></td>
+        <td><%= page.permalink %></td>
+        <td class="center"><%= status_tag(page.visible) %></td>
+        <td class="center"><%= page.sections.size %></td>
         <td class="actions">
           <%= link_to "Show", { action: 'show', id: page.id }, class: 'action show' %>
           <%= link_to "Edit", { action: 'edit', id: page.id }, class: 'action edit' %>

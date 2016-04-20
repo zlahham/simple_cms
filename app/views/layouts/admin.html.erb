@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Admin</title>
+    <title>Simple  CMS | <%= @page_title || "Admin" %> </title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -12,6 +12,11 @@
     </div>
     <div id="main">
       <div id="content">
+        <% if !flash[:notice].blank? %>
+          <div class="notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>

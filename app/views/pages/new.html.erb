@@ -1,2 +1,16 @@
-<h1>Pagess#new</h1>
-<p>Find me in app/views/pagess/new.html.erb</p>
+<%= @page_title = "Pages" %>
+<%= link_to "<< Back to List", { action: 'index' }, class: 'back-link' %>
+
+<div class="pages new">
+  <h2>Create Page</h2>
+
+  <%= form_for :page, url: { action: 'create' } do |f| %>
+
+    <%= render(partial: 'form', locals: {f: f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Page") %>
+    </div>
+
+  <% end %>
+</div>
